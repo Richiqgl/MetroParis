@@ -21,7 +21,7 @@ toc = datetime.now()
 print(f"Time elapsed: {toc-tic}")
 
 
-mymodel.getDFS()
 
+mymodel.printGraph()
 print(f"The graph has {mymodel.getNumNodes()} nodes.")
 print(f"The graph has {mymodel.getNumEdges()} edges.")

@@ -1,5 +1,7 @@
 from database.DAO import DAO
 import networkx as nx
+import matplotlib.pyplot as plt
+import scipy
 
 class Model:
     def __init__(self):
@@ -108,3 +110,14 @@ class Model:
 
     def getNumEdges(self):
         return len(self._grafo.edges)
+
+    def printGraph(self):
+        plt.figure(figsize=(50, 50))
+
+        pos = nx.spring_layout(self._grafo)  # pos = nx.nx_agraph.graphviz_layout(G)
+        nx.draw_networkx(self._grafo, pos)
+        labels = nx.get_edge_attributes(self._grafo, 'weight')
+        nx.draw_networkx_edge_labels(self._grafo, pos, edge_labels=labels)
+
+        plt.savefig("plot")
+        plt.show()
