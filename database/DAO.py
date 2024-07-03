@@ -1,6 +1,6 @@
 from database.DB_connect import DBConnect
 from model.connessione import Connessione
-from model.fermata import Fermata
+from modello.fermata import Fermata
 from model.linea import Linea
 
 
